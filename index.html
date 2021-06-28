@@ -40,9 +40,10 @@
             </div>
         </div>
     </div>
-    <div id="parent">
+    <div>
         <div id="important" data-value="1"></div>
         <div id="updated"></div>
+        <div id="special"></div>
     </div>
     <script>
         $(function () {
@@ -57,12 +58,7 @@
                 })
                     .done(function (result) {
                         $('#updated').attr('data-value', '1' + result.updated);
-                        if (result.updated === 1) {
-                            $('#parent').append('<div id="special" data-value="13"></div>');
-                        }
-                        else {
-                            $('#parent').append('<div id="special" data-value="653"></div>');
-                        }
+                        $('#special').attr('data-value', result.special);
                         $('#resultBlock').show();
                     });
 
